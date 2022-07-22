@@ -122,6 +122,12 @@
                 <span class="menu-title">Prediksi</span>
               </a>
             </li>
+            <li class="nav-item" <?=$url == 'testing' ? 'style="background:#0f25d5;"' : ''?>>
+              <a class="nav-link" href="<?=site_url('testing')?>">
+                <i class="menu-icon typcn typcn-user-outline"></i>
+                <span class="menu-title">Pengujian</span>
+              </a>
+            </li>
             <li class="nav-item" <?=$url == 'about' ? 'style="background:#0f25d5;"' : ''?>>
               <a class="nav-link" href="<?=site_url('about')?>">
                 <i class="menu-icon typcn typcn-user-outline"></i>
