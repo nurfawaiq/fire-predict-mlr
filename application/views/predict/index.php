@@ -28,52 +28,53 @@
                     $no++;
                 endforeach;
 
-                $arr = array(
-                    [($no-1), $sum_x1, $sum_x2],
-                    [$sum_x1, $sum_x1x1, $sum_x1x2],
-                    [$sum_x2, $sum_x1x2, $sum_x2x2]
-                );
-                $det = $arr[0][0] * ($arr[1][1] * $arr[2][2] - $arr[1][2] * $arr[2][1]) -
-                    $arr[0][1] * ($arr[1][0] * $arr[2][2] - $arr[1][2] * $arr[2][0]) +
-                    $arr[0][2] * ($arr[1][0] * $arr[2][1] - $arr[1][1] * $arr[2][0]);
-                
-                $arr = array(
-                    [$sum_y, $sum_x1, $sum_x2],
-                    [$sum_x1y, $sum_x1x1, $sum_x1x2],
-                    [$sum_x2y, $sum_x1x2, $sum_x2x2]
-                );
-                $det1 = $arr[0][0] * ($arr[1][1] * $arr[2][2] - $arr[1][2] * $arr[2][1]) -
-                    $arr[0][1] * ($arr[1][0] * $arr[2][2] - $arr[1][2] * $arr[2][0]) +
-                    $arr[0][2] * ($arr[1][0] * $arr[2][1] - $arr[1][1] * $arr[2][0]);
+                $hasil_prediksi = "";
+                if($sum_n != 0) :
+                    $arr = array(
+                        [($no-1), $sum_x1, $sum_x2],
+                        [$sum_x1, $sum_x1x1, $sum_x1x2],
+                        [$sum_x2, $sum_x1x2, $sum_x2x2]
+                    );
+                    $det = $arr[0][0] * ($arr[1][1] * $arr[2][2] - $arr[1][2] * $arr[2][1]) -
+                        $arr[0][1] * ($arr[1][0] * $arr[2][2] - $arr[1][2] * $arr[2][0]) +
+                        $arr[0][2] * ($arr[1][0] * $arr[2][1] - $arr[1][1] * $arr[2][0]);
+                    
+                    $arr = array(
+                        [$sum_y, $sum_x1, $sum_x2],
+                        [$sum_x1y, $sum_x1x1, $sum_x1x2],
+                        [$sum_x2y, $sum_x1x2, $sum_x2x2]
+                    );
+                    $det1 = $arr[0][0] * ($arr[1][1] * $arr[2][2] - $arr[1][2] * $arr[2][1]) -
+                        $arr[0][1] * ($arr[1][0] * $arr[2][2] - $arr[1][2] * $arr[2][0]) +
+                        $arr[0][2] * ($arr[1][0] * $arr[2][1] - $arr[1][1] * $arr[2][0]);
 
-                $arr = array(
-                    [$no-1, $sum_y, $sum_x2],
-                    [$sum_x1, $sum_x1y, $sum_x1x2],
-                    [$sum_x2, $sum_x2y, $sum_x2x2]
-                );
-                $det2 = $arr[0][0] * ($arr[1][1] * $arr[2][2] - $arr[1][2] * $arr[2][1]) -
-                    $arr[0][1] * ($arr[1][0] * $arr[2][2] - $arr[1][2] * $arr[2][0]) +
-                    $arr[0][2] * ($arr[1][0] * $arr[2][1] - $arr[1][1] * $arr[2][0]);
+                    $arr = array(
+                        [$no-1, $sum_y, $sum_x2],
+                        [$sum_x1, $sum_x1y, $sum_x1x2],
+                        [$sum_x2, $sum_x2y, $sum_x2x2]
+                    );
+                    $det2 = $arr[0][0] * ($arr[1][1] * $arr[2][2] - $arr[1][2] * $arr[2][1]) -
+                        $arr[0][1] * ($arr[1][0] * $arr[2][2] - $arr[1][2] * $arr[2][0]) +
+                        $arr[0][2] * ($arr[1][0] * $arr[2][1] - $arr[1][1] * $arr[2][0]);
 
-                $arr = array(
-                    [$no-1, $sum_x1, $sum_y],
-                    [$sum_x1, $sum_x1x1, $sum_x1y],
-                    [$sum_x2, $sum_x1x2, $sum_x2y]
-                );
-                $det3 = $arr[0][0] * ($arr[1][1] * $arr[2][2] - $arr[1][2] * $arr[2][1]) -
-                    $arr[0][1] * ($arr[1][0] * $arr[2][2] - $arr[1][2] * $arr[2][0]) +
-                    $arr[0][2] * ($arr[1][0] * $arr[2][1] - $arr[1][1] * $arr[2][0]);
-                ?>
-                <!-- Y = b0 + b1 X1 + b2 X2
-                Y = <?=$det1 / $det?> + <?=$det2 / $det?> X1 + <?=$det3 / $det?> X2 -->
-                <?php
-                if(isset($_POST['proses'])) {
-                    $new_x1 = $this->input->post('jumlah_kasus');
-                    $new_x2 = $this->input->post('jumlah_alert');
-                    $hasil_prediksi = $det1 / $det + $det2 / $det * $new_x1 + $det3 / $det * $new_x2;
-                } else {
-                    $hasil_prediksi = "";
-                }
+                    $arr = array(
+                        [$no-1, $sum_x1, $sum_y],
+                        [$sum_x1, $sum_x1x1, $sum_x1y],
+                        [$sum_x2, $sum_x1x2, $sum_x2y]
+                    );
+                    $det3 = $arr[0][0] * ($arr[1][1] * $arr[2][2] - $arr[1][2] * $arr[2][1]) -
+                        $arr[0][1] * ($arr[1][0] * $arr[2][2] - $arr[1][2] * $arr[2][0]) +
+                        $arr[0][2] * ($arr[1][0] * $arr[2][1] - $arr[1][1] * $arr[2][0]);
+                        ?>
+                    <!-- Y = b0 + b1 X1 + b2 X2
+                    Y = <?=$det1 / $det?> + <?=$det2 / $det?> X1 + <?=$det3 / $det?> X2 -->
+                    <?php
+                    if(isset($_POST['proses'])) {
+                        $new_x1 = $this->input->post('jumlah_kasus');
+                        $new_x2 = $this->input->post('jumlah_alert');
+                        $hasil_prediksi = $det1 / $det + $det2 / $det * $new_x1 + $det3 / $det * $new_x2;
+                    }
+                endif;
                 ?>
                 <div class="row">
                     <div class="col-md-6">

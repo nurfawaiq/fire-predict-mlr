@@ -28,47 +28,50 @@
                     $no++;
                 endforeach;
 
-                $arr = array(
-                    [($no-1), $sum_x1, $sum_x2],
-                    [$sum_x1, $sum_x1x1, $sum_x1x2],
-                    [$sum_x2, $sum_x1x2, $sum_x2x2]
-                );
-                $det = $arr[0][0] * ($arr[1][1] * $arr[2][2] - $arr[1][2] * $arr[2][1]) -
-                    $arr[0][1] * ($arr[1][0] * $arr[2][2] - $arr[1][2] * $arr[2][0]) +
-                    $arr[0][2] * ($arr[1][0] * $arr[2][1] - $arr[1][1] * $arr[2][0]);
-                
-                $arr = array(
-                    [$sum_y, $sum_x1, $sum_x2],
-                    [$sum_x1y, $sum_x1x1, $sum_x1x2],
-                    [$sum_x2y, $sum_x1x2, $sum_x2x2]
-                );
-                $det1 = $arr[0][0] * ($arr[1][1] * $arr[2][2] - $arr[1][2] * $arr[2][1]) -
-                    $arr[0][1] * ($arr[1][0] * $arr[2][2] - $arr[1][2] * $arr[2][0]) +
-                    $arr[0][2] * ($arr[1][0] * $arr[2][1] - $arr[1][1] * $arr[2][0]);
+                $hasil_prediksi = "";
+                if($sum_n != 0) :
+                    $arr = array(
+                        [($no-1), $sum_x1, $sum_x2],
+                        [$sum_x1, $sum_x1x1, $sum_x1x2],
+                        [$sum_x2, $sum_x1x2, $sum_x2x2]
+                    );
+                    $det = $arr[0][0] * ($arr[1][1] * $arr[2][2] - $arr[1][2] * $arr[2][1]) -
+                        $arr[0][1] * ($arr[1][0] * $arr[2][2] - $arr[1][2] * $arr[2][0]) +
+                        $arr[0][2] * ($arr[1][0] * $arr[2][1] - $arr[1][1] * $arr[2][0]);
+                    
+                    $arr = array(
+                        [$sum_y, $sum_x1, $sum_x2],
+                        [$sum_x1y, $sum_x1x1, $sum_x1x2],
+                        [$sum_x2y, $sum_x1x2, $sum_x2x2]
+                    );
+                    $det1 = $arr[0][0] * ($arr[1][1] * $arr[2][2] - $arr[1][2] * $arr[2][1]) -
+                        $arr[0][1] * ($arr[1][0] * $arr[2][2] - $arr[1][2] * $arr[2][0]) +
+                        $arr[0][2] * ($arr[1][0] * $arr[2][1] - $arr[1][1] * $arr[2][0]);
 
-                $arr = array(
-                    [$no-1, $sum_y, $sum_x2],
-                    [$sum_x1, $sum_x1y, $sum_x1x2],
-                    [$sum_x2, $sum_x2y, $sum_x2x2]
-                );
-                $det2 = $arr[0][0] * ($arr[1][1] * $arr[2][2] - $arr[1][2] * $arr[2][1]) -
-                    $arr[0][1] * ($arr[1][0] * $arr[2][2] - $arr[1][2] * $arr[2][0]) +
-                    $arr[0][2] * ($arr[1][0] * $arr[2][1] - $arr[1][1] * $arr[2][0]);
+                    $arr = array(
+                        [$no-1, $sum_y, $sum_x2],
+                        [$sum_x1, $sum_x1y, $sum_x1x2],
+                        [$sum_x2, $sum_x2y, $sum_x2x2]
+                    );
+                    $det2 = $arr[0][0] * ($arr[1][1] * $arr[2][2] - $arr[1][2] * $arr[2][1]) -
+                        $arr[0][1] * ($arr[1][0] * $arr[2][2] - $arr[1][2] * $arr[2][0]) +
+                        $arr[0][2] * ($arr[1][0] * $arr[2][1] - $arr[1][1] * $arr[2][0]);
 
-                $arr = array(
-                    [$no-1, $sum_x1, $sum_y],
-                    [$sum_x1, $sum_x1x1, $sum_x1y],
-                    [$sum_x2, $sum_x1x2, $sum_x2y]
-                );
-                $det3 = $arr[0][0] * ($arr[1][1] * $arr[2][2] - $arr[1][2] * $arr[2][1]) -
-                    $arr[0][1] * ($arr[1][0] * $arr[2][2] - $arr[1][2] * $arr[2][0]) +
-                    $arr[0][2] * ($arr[1][0] * $arr[2][1] - $arr[1][1] * $arr[2][0]);
-                ?>
-                <div>
-                    Y = b0 + b1 X1 + b2 X2
-                    <br>
-                    Y = <?=$det1 / $det?> + <?=$det2 / $det?> X1 + <?=$det3 / $det?> X2
-                </div>
+                    $arr = array(
+                        [$no-1, $sum_x1, $sum_y],
+                        [$sum_x1, $sum_x1x1, $sum_x1y],
+                        [$sum_x2, $sum_x1x2, $sum_x2y]
+                    );
+                    $det3 = $arr[0][0] * ($arr[1][1] * $arr[2][2] - $arr[1][2] * $arr[2][1]) -
+                        $arr[0][1] * ($arr[1][0] * $arr[2][2] - $arr[1][2] * $arr[2][0]) +
+                        $arr[0][2] * ($arr[1][0] * $arr[2][1] - $arr[1][1] * $arr[2][0]);
+                    ?>
+                    <div>
+                        Y = b0 + b1 X1 + b2 X2
+                        <br>
+                        Y = <?=$det1 / $det?> + <?=$det2 / $det?> X1 + <?=$det3 / $det?> X2
+                    </div>
+                <?php endif; ?>
                 <br>
                 <div class="table-responsive">
                     <table class="table table-bordered">
