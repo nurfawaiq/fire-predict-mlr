@@ -3,7 +3,7 @@
         <div class="card">
             <div class="card-body">
                 <div class="card-title">
-                    <h4 class="float-left">Total</h4>
+                    <h4 class="float-left">Total Rekap Per Tahun</h4>
                 </div>
                 <br>
                 <?php $this->view('messages') ?>

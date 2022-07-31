@@ -25,7 +25,7 @@
 					</div>
 				</div>
 				<div class="d-flex justify-content-between">
-					<h5 class="font-weight-semibold mb-0">Total</h5>
+					<h5 class="font-weight-semibold mb-0">Total (Tahun)</h5>
 					<p class="text-white mb-0"></p>
 				</div>
 			</div>

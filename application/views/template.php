@@ -38,14 +38,14 @@
             <li class="nav-item dropdown d-none d-xl-inline-block user-dropdown">
               <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
                 <?php if($this->session->userdata('id_user')) : ?>
-                  <img class="img-xs rounded-circle" src="<?=base_url()?>public/assets/images/faces/face2.jpg" alt="Profile image"> </a>
+                  <img class="img-xs rounded-circle" src="<?=base_url()?>public/assets/images/faces/face24.jpg" alt="Profile image"> </a>
                 <?php else : ?>
                   <img class="img-xs rounded-circle" src="<?=base_url()?>public/assets/images/faces/avatar.png" alt="Profile image"> </a>
                 <?php endif; ?>
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
                 <div class="dropdown-header text-center">
                   <?php if($this->session->userdata('id_user')) : ?>
-                    <img class="img-md rounded-circle" src="<?=base_url()?>public/assets/images/faces/face2.jpg" alt="Profile image">
+                    <img class="img-md rounded-circle" src="<?=base_url()?>public/assets/images/faces/face24.jpg" alt="Profile image">
                     <p class="mb-1 mt-3 font-weight-semibold"><?=user()->nama?></p>
                     <p class="font-weight-light text-muted mb-0">Admin</p>
                   <?php else : ?>
@@ -74,7 +74,7 @@
               <a href="#" class="nav-link">
                 <div class="profile-image">
                   <?php if($this->session->userdata('id_user')) : ?>
-                    <img class="img-xs rounded-circle" src="<?=base_url()?>public/assets/images/faces/face2.jpg" alt="profile image">
+                    <img class="img-xs rounded-circle" src="<?=base_url()?>public/assets/images/faces/face24.jpg" alt="profile image">
                   <?php else : ?>
                     <img class="img-xs rounded-circle" src="<?=base_url()?>public/assets/images/faces/avatar.png" alt="profile image">
                   <?php endif; ?>
@@ -107,7 +107,7 @@
             <li class="nav-item" <?=$url == 'total' ? 'style="background:#0f25d5;"' : ''?>>
               <a class="nav-link" href="<?=site_url('total')?>">
                 <i class="menu-icon typcn typcn-th-large-outline"></i>
-                <span class="menu-title">Total</span>
+                <span class="menu-title">Total (Tahun)</span>
               </a>
             </li>
             <li class="nav-item" <?=$url == 'calc' ? 'style="background:#0f25d5;"' : ''?>>
