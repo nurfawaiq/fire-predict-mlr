@@ -58,7 +58,7 @@
                     <a href="#"></a>
                     </li>
                 </ul>
-                <p class="footer-text text-center">Copyright © 2022 - Kelompok 3 DS. All rights reserved.</p>
+                <p class="footer-text text-center">Copyright © 2022 - YukCoding Media. All rights reserved.</p>
             </div>
           </div>
         </div>
