@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Aug 02, 2022 at 10:07 AM
+-- Generation Time: Jan 19, 2023 at 09:32 AM
 -- Server version: 5.7.24
 -- PHP Version: 8.1.5
 
@@ -259,7 +259,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `nama`, `username`, `password`) VALUES
-(1, 'M. Nur F', 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997');
+(1, 'M. Nur F', 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997'),
+(2, 'Steven', 'operator', 'fe96dd39756ac41b74283a9292652d366d73931f');
 
 --
 -- Indexes for dumped tables
@@ -303,7 +304,7 @@ ALTER TABLE `rekap`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
