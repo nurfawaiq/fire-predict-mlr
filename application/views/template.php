@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Prediksi Kebakaran Hutan - Multiple Linear Regression</title>
+    <title>Prediksi Kebakaran Hutan - Multiple Linear Regression (by YukCoding)</title>
     <link rel="stylesheet" href="<?=base_url()?>public/assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
     <!-- <link rel="stylesheet" href="<?=base_url()?>public/assets/vendors/iconfonts/ionicons/css/ionicons.css"> -->
     <!-- <link rel="stylesheet" href="<?=base_url()?>public/assets/vendors/iconfonts/typicons/src/font/typicons.css"> -->
@@ -31,7 +31,7 @@
         <div class="navbar-menu-wrapper d-flex align-items-center">
           <form class="search-form d-none d-md-block" action="">
             <div class="form-group">
-              <input type="search" class="form-control" placeholder="Search Here">
+              <input type="search" class="form-control" placeholder="Search ..">
             </div>
           </form>
           <ul class="navbar-nav ml-auto">
@@ -47,7 +47,7 @@
                   <?php if($this->session->userdata('id_user')) : ?>
                     <img class="img-md rounded-circle" src="<?=base_url()?>public/assets/images/faces/face24.jpg" alt="Profile image">
                     <p class="mb-1 mt-3 font-weight-semibold"><?=user()->nama?></p>
-                    <p class="font-weight-light text-muted mb-0">Admin</p>
+                    <p class="font-weight-light text-muted mb-0"><?=user()->username?> (Admin)</p>
                   <?php else : ?>
                     <img class="img-md rounded-circle" src="<?=base_url()?>public/assets/images/faces/avatar.png" alt="Profile image">
                     <p class="mb-1 mt-3 font-weight-semibold">Visitor</p>
@@ -83,7 +83,7 @@
                 <div class="text-wrapper">
                   <?php if($this->session->userdata('id_user')) : ?>
                   <p class="profile-name"><?=user()->nama?></p>
-                  <p class="designation">Admin</p>
+                  <p class="designation"><?=user()->username?></p>
                   <?php else : ?>
                     <p class="profile-name">Visitor</p>
                   <?php endif; ?>
@@ -142,8 +142,9 @@
           </div>
           <footer class="footer">
             <div class="container-fluid clearfix">
-              <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2022 - Kelompok 3 DS.</span>
-              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Made with <i class="mdi mdi-heart text-danger"></i>
+              <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2022 - YukCoding Media.</span>
+              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">
+                Made with <i class="mdi mdi-heart text-danger"></i> in Jogja
               </span>
             </div>
           </footer>

@@ -10,7 +10,9 @@
                         </a>
                     </div>
                 </div>
-                <br><br>
+                <br>
+                <p class="card-description">Data from <a href="https://globalforestwatch.org/dashboards/global/?category=fires" target="_blank">globalforestwatch.org</a></p>
+                <br>
                 <div class="row">
                     <div class="col-md-6">
                         <form action="<?=site_url('dataset/process')?>" method="post" enctype="multipart/form-data">
