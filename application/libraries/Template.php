@@ -1,4 +1,5 @@
 <?php
+#[\AllowDynamicProperties]
 
 Class Template {
 
